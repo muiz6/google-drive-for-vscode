@@ -16,24 +16,33 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "google-drive-for-vscode.helloWorld",
-				"title": "Hello World"
+				"command": "view-drive.auth",
+				"title": "Authenticate"
 			}
 		],
-		"viewsContainers": {
-			"activitybar": [
+		"menus": {
+			"view/title": [
 				{
-					"id": "google-drive-for-vscode",
-					"title": "Google Drive for VS Code",
-					"icon": "resources/icon.svg"
+					"command": "view-drive.auth",
+					"when": "view == view-drive"
 				}
 			]
 		},
 		"views": {
 			"google-drive-for-vscode": [
 				{
-					"id": "drive-view",
-					"name": "Google Drive"
+					"icon": "resources/icon.svg",
+					"id": "view-drive",
+					"name": "Drive"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "google-drive-for-vscode",
+					"icon": "resources/icon.svg",
+					"title": "Google Drive for VS Code"
 				}
 			]
 		}
@@ -55,5 +64,9 @@
 		"mocha": "^10.0.0",
 		"typescript": "^4.7.2"
 	},
-	"publisher": "muiz6"
+	"publisher": "muiz6",
+	"dependencies": {
+		"google-auth-library": "^8.0.2",
+		"rxjs": "^7.5.5"
+	}
 }
